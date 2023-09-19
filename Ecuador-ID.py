@@ -69,7 +69,7 @@ class process():
         
         try:
             if len(nombre) == 1 and len(apellido) == 1:
-                r = requests.get(self.url + f"/movil-servicios/api/v1.0/deudas/porDenominacion/{apellido[0]}%20{nombre[0]}/?tipoPersona=N&resultados=30") 
+                r = requests.get(self.url + f"/movil-servicios/api/v1.0/deudas/porDenominacion/{apellido[0]}%20{nombre[0]}/?tipoPersona=N&resultados=100") 
             elif len(nombre) == 2 and len(apellido) == 1:
                 r = requests.get(self.url + f"/movil-servicios/api/v1.0/deudas/porDenominacion/{apellido[0]}%20{nombre[0]}%20{nombre[1]}/?tipoPersona=N&resultados=30")    
             elif len(nombre) == 1 and len(apellido) == 2:
@@ -110,7 +110,9 @@ class process():
     def cedulas(self):
         cedula2 = list()
         try:    
-            intro = int(input(f"\n{CYAN}[+]{RESET} Ingrese el numero de cedula: "))
+            intro = input(f"\n{CYAN}[+]{RESET} Ingrese el numero de cedula: ")
+            # Now 'intro' will store the input as a string, preserving leading zeros
+            cedula2.append(intro) 
         except:
             print(f"{RED}[!]{RESET} Ingrese el numero de cedula correctamente")
             exit()
