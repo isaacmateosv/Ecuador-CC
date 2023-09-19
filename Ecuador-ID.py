@@ -69,7 +69,7 @@ class process():
         
         try:
             if len(nombre) == 1 and len(apellido) == 1:
-                r = requests.get(self.url + f"/movil-servicios/api/v1.0/deudas/porDenominacion/{apellido[0]}%20{nombre[0]}/?tipoPersona=N&resultados=100") 
+                r = requests.get(self.url + f"/movil-servicios/api/v1.0/deudas/porDenominacion/{apellido[0]}%20{nombre[0]}/?tipoPersona=N&resultados=30") 
             elif len(nombre) == 2 and len(apellido) == 1:
                 r = requests.get(self.url + f"/movil-servicios/api/v1.0/deudas/porDenominacion/{apellido[0]}%20{nombre[0]}%20{nombre[1]}/?tipoPersona=N&resultados=30")    
             elif len(nombre) == 1 and len(apellido) == 2:
